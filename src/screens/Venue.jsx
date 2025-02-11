@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Header from "../components/Header";
 import VenueContent from "../components/VenueContent";
 import {BASE_URL} from "../components/constants"
 import { useNavigate, useOutletContext } from "react-router-dom";
@@ -45,7 +44,7 @@ function Venue() {
   
     return (
       <>
-        {/* <Header onSearchAction={onSearchAction} /> */}
+     
         <div className="main-layout">
           {filteredData.map((item , id) => (
             <VenueContent onClick = {()=> onCardClick(id)}

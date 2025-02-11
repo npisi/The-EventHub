@@ -8,6 +8,7 @@ import Header from "./components/Header";
 import Error from "./screens/Error";
 import VenueDetails from "./screens/VenueDetails";
 import { NetworkProvider } from "./contexts/noInternetConn";
+import Login from "./screens/Login";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -46,6 +47,10 @@ function App() {
         {
           path: "/venue-details/:venueId",
           element: <VenueDetails />,
+        },
+        {
+          path: "/login",
+          element: <Login />,
         },
       ],
     },

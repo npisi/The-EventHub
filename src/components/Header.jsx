@@ -1,5 +1,5 @@
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import logo from "./logo.png"
 
@@ -10,6 +10,8 @@ const Header = ({onSearchClick}) => {
     const [userState, setUserState] = useState("Login")
 
     const [searchText, setSearchText] = useState("")
+    
+    
 
 
 
@@ -33,7 +35,7 @@ const Header = ({onSearchClick}) => {
                 <Link to={"/venue"}>Venues</Link>
                 <span>My Bookings</span>
                 <span>About Us</span>
-                <button onClick={changeUserState} className="login-btn">{userState}</button> 
+                <Link to={"/login"}><button onClick={changeUserState} className="login-btn">{userState}</button></Link>
 
             </div>
         </div>
