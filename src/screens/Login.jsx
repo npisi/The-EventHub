@@ -25,7 +25,7 @@ const Login = () => {
                 <img src={login} />
                 <form onSubmit={handleSubmit} className="login-form">
                     <input type="text" placeholder="Enter Your Mobile Number" value={mobile} onChange={(e) => setMobile(e.target.value)} required></input>
-                    <button type="submit">Login</button>
+                    <button type="submit">Request OTP</button>
                 </form>
             </div>
         </>

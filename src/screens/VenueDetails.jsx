@@ -12,7 +12,7 @@ const VenueDetails =()=>{
     },[])
     
     const fetchVenueData = async () => {
-        const data = await fetch(`${BASE_URL}/get-venue-details?venueId=${venueId}`)
+        const data = await fetch(`${BASE_URL}/get-restaurant-details?restaurantId=${venueId}`)
         const jsonData = await data.json()
     }
     

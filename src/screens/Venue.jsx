@@ -18,7 +18,7 @@ function Venue() {
     },[filterText])
 
     const fetchData = async () => {
-      const venueData = await fetch(`${BASE_URL}/get-all-venues`);
+      const venueData = await fetch(`${BASE_URL}/get-all-restaurants`);
       const result = await venueData.json();
       setData(result.data.rows);
       setFilteredData(result.data.rows);
@@ -39,7 +39,7 @@ function Venue() {
     }
 
     const onCardClick = (venueId) => {
-      navigate(`/venue-details/${venueId}`)
+      navigate(`/restaurant-details/${venueId}`)
     }
   
     return (

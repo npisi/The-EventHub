@@ -10,7 +10,7 @@ function Home() {
   let [filteredData, setFilteredData] = useState([]);
   let {filterText} = useOutletContext();
 
-console.log( "---" ,filterText)
+
 
   // const onlineStatus = useOnlineStatus();
   
@@ -30,6 +30,8 @@ console.log( "---" ,filterText)
     setFilteredData(result.data.data);
 
   };
+  console.log(data);
+  
 
 
   const onFilter = (searchText) => {
@@ -57,7 +59,7 @@ console.log( "---" ,filterText)
         {filteredData.map((item) => (
           <EventContent
             key={item.name}
-            name={item.venueName}
+            name={item.restaurantName}
             event={item.title}
             img={item.profilePicture}
           />

@@ -45,7 +45,7 @@ function App() {
           element: <Venue />,
         },
         {
-          path: "/venue-details/:venueId",
+          path: "/restaurant-details/:venueId",
           element: <VenueDetails />,
         },
         {
