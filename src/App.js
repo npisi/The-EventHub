@@ -1,24 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Home from "./screens/Home";
+import Header from "./components/Header";
+import Venue from "./screens/Venue";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import ReactDOM from "react-dom/client";
+import { NetworkProvider } from "./context/networkConnection";
+import { useState } from "react";
+import VenueDetails from "./screens/VenueDetails";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  const AppLayout = () => {
+
+    const [filterText , setFilterText] = useState("")
+
+    const onSearchClick = (val) => {
+      setFilterText(val)
+    }
+
+    return (
+      <>
+        <Header onSearchClick={onSearchClick} />
+        <Outlet context={filterText}/>
+      </>
+    );
+  };
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <AppLayout />,
+      children: [
+        {
+          path: "/",
+          element: <Home />,
+        },
+        {
+          path: "/venue",
+          element: <Venue />,
+        },
+        {
+          path: "/restaurant-details/:venueId",
+          element: <VenueDetails />
+        }
+      ],
+    },
+  ]);
+
+  root.render(
+    <NetworkProvider>
+      <RouterProvider router={router} />
+    </NetworkProvider>
   );
 }
 
