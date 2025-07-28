@@ -1,70 +1,81 @@
-# Getting Started with Create React App
+# Event Venue Booking React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive web application for browsing and booking event venues, built with React. The app features a clean UI, sticky header, interactive accordions for menu packages, and a robust routing structure.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Venue Listings:** Browse a variety of venues with detailed information and amenities.
+- **Event Packages:** View and expand menu packages with nested accordions for detailed menu options.
+- **Sticky Header:** Always-visible navigation and search bar for easy access.
+- **Search Functionality:** Quickly filter venues or events using the search bar.
+- **Responsive Design:** Looks great on desktop and mobile devices.
+- **React Router:** Smooth navigation between Home, Venues, and Venue Details pages.
+- **Context API:** Network connection context for scalable state management.
 
-### `npm start`
+## Project Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+my-react/
+├── public/                # Static assets and HTML template
+├── src/
+│   ├── components/        # Reusable UI components
+│   │   ├── Header.jsx
+│   │   ├── MenuAccordian.jsx
+│   │   ├── NestedMenuAccordian.jsx
+│   │   ├── EventCards.jsx
+│   │   ├── VenueCards.jsx
+│   │   └── imgs/          # Images for UI
+│   ├── context/
+│   │   └── networkConnection.js
+│   ├── screens/           # Main app screens/pages
+│   │   ├── Home.jsx
+│   │   ├── Venue.jsx
+│   │   └── VenueDetails.jsx
+│   ├── App.js             # Main app logic and routing
+│   ├── App.css            # Global styles
+│   └── index.js           # Entry point
+├── package.json
+└── README.md
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+### Prerequisites
+- Node.js (v14 or higher recommended)
+- npm (comes with Node.js)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/your-username/your-repo-name.git
+   cd your-repo-name/my-react
+   ```
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+3. **Start the development server:**
+   ```bash
+   npm start
+   ```
+4. **Open in your browser:**
+   Visit [http://localhost:3000](http://localhost:3000)
 
-### `npm run build`
+## Usage
+- Use the search bar in the sticky header to filter venues or events.
+- Click on a venue to view details and available packages.
+- Expand menu accordions to see detailed menu options.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Customization
+- Update venue and menu data in the respective components or connect to an API for dynamic data.
+- Modify styles in `App.css` to match your branding.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Contributing
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## License
+[MIT](LICENSE)
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Made with ❤️ using React.**
