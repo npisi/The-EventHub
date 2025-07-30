@@ -1,6 +1,6 @@
 # Event Venue Booking React App
 
-A modern, responsive web application for browsing and booking event venues, built with React. The app features a clean UI, sticky header, interactive accordions for menu packages, and a robust routing structure.
+A modern, responsive web application for browsing and booking event venues, built with React. The app features a clean UI, sticky header, interactive accordions for menu packages, a robust routing structure, and a custom error screen for unmatched routes.
 
 ## Features
 
@@ -10,6 +10,7 @@ A modern, responsive web application for browsing and booking event venues, buil
 - **Search Functionality:** Quickly filter venues or events using the search bar.
 - **Responsive Design:** Looks great on desktop and mobile devices.
 - **React Router:** Smooth navigation between Home, Venues, and Venue Details pages.
+- **Custom Error Screen:** Friendly 404 page for unmatched or invalid routes.
 - **Context API:** Network connection context for scalable state management.
 
 ## Project Structure
@@ -30,7 +31,8 @@ my-react/
 │   ├── screens/           # Main app screens/pages
 │   │   ├── Home.jsx
 │   │   ├── Venue.jsx
-│   │   └── VenueDetails.jsx
+│   │   ├── VenueDetails.jsx
+│   │   └── ErrorScreen.jsx   # Custom error (404) page
 │   ├── App.js             # Main app logic and routing
 │   ├── App.css            # Global styles
 │   └── index.js           # Entry point
@@ -65,10 +67,12 @@ my-react/
 - Use the search bar in the sticky header to filter venues or events.
 - Click on a venue to view details and available packages.
 - Expand menu accordions to see detailed menu options.
+- Navigate to an invalid or non-existent route to see the custom error (404) screen.
 
 ## Customization
 - Update venue and menu data in the respective components or connect to an API for dynamic data.
 - Modify styles in `App.css` to match your branding.
+- Customize the error screen in `src/screens/ErrorScreen.jsx` as needed.
 
 ## Contributing
 Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.

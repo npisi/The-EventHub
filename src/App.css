@@ -117,6 +117,7 @@ body {
   height: 250px;
   width: 100%;
   overflow: hidden;
+  border-radius: 10px;
 }
 .card-img-container img {
   width: 100%;

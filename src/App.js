@@ -7,6 +7,7 @@ import ReactDOM from "react-dom/client";
 import { NetworkProvider } from "./context/networkConnection";
 import { useState } from "react";
 import VenueDetails from "./screens/VenueDetails";
+import ErrorScreen from "./screens/ErrorScreen";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -31,6 +32,7 @@ function App() {
     {
       path: "/",
       element: <AppLayout />,
+      errorElement : <ErrorScreen />,
       children: [
         {
           path: "/",
