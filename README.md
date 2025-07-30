@@ -1,4 +1,4 @@
-# Event Venue Booking React App
+# Event Venue Booking React App (The EventHub)
 
 A modern, responsive web application for browsing and booking event venues, built with React. The app features a clean UI, sticky header, interactive accordions for menu packages, a robust routing structure, and a custom error screen for unmatched routes.
 
