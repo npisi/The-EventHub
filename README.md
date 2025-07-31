@@ -107,6 +107,10 @@ Comprehensive media queries for:
 - Replace the custom carousel with React carousel libraries if needed.
 - Extend the login modal with authentication logic and API integration.
 
+## API Integration & CORS
+
+**Note:** For development, you can use CORS browser extensions to enable cross-origin requests when testing API integrations.
+
 ## Contributing
 Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
 
