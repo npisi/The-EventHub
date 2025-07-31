@@ -111,6 +111,9 @@ Comprehensive media queries for:
 
 **Note:** For development, you can use CORS browser extensions to enable cross-origin requests when testing API integrations.
 
+## Offline Modal
+- An Offline Modal is also there which appears when the user is offline.
+
 ## Contributing
 Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
 
