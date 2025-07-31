@@ -2,10 +2,12 @@
 import { useState } from 'react'
 import logo from './imgs/logo.png'
 import { Link } from 'react-router-dom'
+import LoginModal from './LoginModal'
 
 const Header = ({ onSearchClick }) => {
 
     const [searchText, setSearchText] = useState("");
+    const [isOpen , setIsOpen] = useState(false)
 
     console.log(searchText)
 
@@ -18,8 +20,9 @@ const Header = ({ onSearchClick }) => {
                 <Link to={"/"} className='header-link'>Home</Link>
                 <Link to={"/venue"} className='header-link'>Venues</Link>
                 <span>My Bookings</span>
-                <button className='login-btn'>Login</button>
+              <button className='login-btn' onClick={()=>setIsOpen(true)}>Login</button>
             </div>
+            {isOpen && <LoginModal onClose={()=>setIsOpen(false)} />}
         </div>
 
     )

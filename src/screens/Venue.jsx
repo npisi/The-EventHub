@@ -39,7 +39,7 @@ const Venue = () => {
     }
 
     return (
-        <div className="main-layout">
+        <div className="main-layout-venue">
             {filteredData.map((item, id) => {
                 return (
                     <VenueCards onCardClick = {()=> onCardClick(id)}

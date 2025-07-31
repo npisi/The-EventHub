@@ -45,7 +45,7 @@ function App() {
         {
           path: "/restaurant-details/:venueId",
           element: <VenueDetails />
-        }
+        },
       ],
     },
   ]);

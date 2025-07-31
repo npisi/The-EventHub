@@ -14,6 +14,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .logo {
   width: 70px;
@@ -89,29 +90,21 @@ body {
 /* Header CSS End */
 
 .main-layout {
+  padding: 25px;
+  gap: 20px;
+}
+.main-layout-venue{
   display: flex;
   padding: 25px;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
+  background-color: #f5f5f5;
 }
 
 /* Event Card CSS*/
 
-.event-card-content {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-  margin: 15px;
-  border-radius: 12px;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-color: white;
-  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1);
-}
-.event-card-content:hover {
-  transform: translateY(-5px);
-}
+
 .card-img-container {
   padding: 0;
   height: 250px;
@@ -130,6 +123,94 @@ body {
   flex-direction: column;
   gap: 10px;
 }
+.event-card-container{
+  max-width: 900px;
+  margin: 40px auto;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  padding: 32px;
+}
+
+.event-card-layout {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.carousel-section {
+  flex: 1;
+  position: relative;
+}
+
+.event-details-section {
+  flex: 1;
+  padding: 20px;
+}
+
+.event-details-section h3 {
+  margin: 0 0 15px 0;
+  color: #222;
+  font-size: 1.2rem;
+}
+
+.event-details-section p {
+  margin: 10px 0;
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.carousel-img-container{
+  width: 100%;
+  height: 300px;
+  border-radius: 15px;
+  overflow-x: auto;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  position: relative;
+}
+.carousel-img-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+.carousel-img-container img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  scroll-snap-align: start;
+}
+
+.carousel-wrapper{
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.carousel-btn{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  font-size: 1.5rem;
+  padding: 8px 12px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+}
+.carousel-btn.left{
+  left: -20px;
+}
+.carousel-btn.right{
+  right: -20px;
+}
+.carousel-btn:hover{
+
+  transform: translateY(-50%) scale(1.1);
+}
+
 
 /* Venue Card CSS */
 
@@ -289,4 +370,399 @@ body {
   list-style: disc;
   color: #333;
   font-size: 0.98rem;
+}
+
+/* Login Modal CSS */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(5px);
+}
+.modal-content {
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  min-width: 320px;
+  max-width: 90vw;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+}
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #888;
+  cursor: pointer;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+.login-form input {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+.login-form input:focus {
+  border-color: #00d4ff;
+  outline: none;
+}
+.login-form button {
+  border-radius: 10px;
+  padding: 12px 20px;
+  transition: all 0.3 ease;
+  width: 50%;
+  align-self: center;
+  cursor: pointer;
+  background-color: #00d4ff;
+  border: 1px solid #020348;
+  font-weight: 600;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Media Queries for Responsive Design */
+
+/* Tablet Styles (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+  .header-container {
+    padding: 12px 20px;
+    gap: 15px;
+  }
+  
+  .search-bar {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+  
+  .header-content {
+    font-size: 16px;
+    gap: 15px;
+  }
+  
+  .venue-details-container {
+    margin: 20px auto;
+    padding: 24px;
+  }
+  
+  .venue-header {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .venue-img {
+    width: 100%;
+    height: 300px;
+  }
+  
+  .event-card-container {
+    margin: 20px auto;
+    padding: 24px;
+  }
+  
+  .event-card-layout {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .carousel-section {
+    order: 1;
+  }
+  
+  .event-details-section {
+    order: 2;
+  }
+  
+  .carousel-img-container {
+    height: 250px;
+  }
+  
+  .carousel-btn.left {
+    left: -15px;
+  }
+  
+  .carousel-btn.right {
+    right: -15px;
+  }
+  
+  .main-layout-venue {
+    padding: 20px;
+    gap: 15px;
+  }
+  
+  .venue-card-container {
+    max-width: 400px;
+  }
+}
+
+/* Phone Styles (320px - 767px) */
+@media screen and (max-width: 767px) {
+  .header-container {
+    padding: 8px 12px;
+    flex-direction: row;
+    max-height: 50px;
+    gap: 8px;
+  }
+  
+  .logo {
+    width: 50px;
+    margin-right: 10px;
+  }
+  
+  .search-bar {
+    flex: 0.6;
+    padding: 6px 10px;
+    font-size: 12px;
+    border-radius: 15px;
+  }
+  
+  .search-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 15px;
+  }
+  
+  .header-content {
+    font-size: 12px;
+    gap: 8px;
+    flex-wrap: nowrap;
+  }
+  
+  .header-link {
+    font-size: 11px;
+  }
+  
+  .login-btn {
+    padding: 6px 10px;
+    font-size: 11px;
+    border-radius: 15px;
+  }
+  
+  .main-layout {
+    padding: 15px;
+  }
+  
+  .main-layout-venue {
+    padding: 15px;
+    gap: 12px;
+  }
+  
+  .venue-details-container {
+    margin: 15px auto;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .venue-header {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .venue-img {
+    width: 100%;
+    height: 250px;
+  }
+  
+  .venue-info h1 {
+    font-size: 1.8rem;
+  }
+  
+  .event-card-container {
+    padding: 15px;
+    margin: 10px auto;
+  }
+  
+  .event-card-layout {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .carousel-img-container {
+    height: 200px;
+  }
+  
+  .carousel-btn {
+    font-size: 1.2rem;
+    padding: 6px 10px;
+  }
+  
+  .carousel-btn.left {
+    left: -10px;
+  }
+  
+  .carousel-btn.right {
+    right: -10px;
+  }
+  
+  .event-details-section {
+    padding: 15px;
+  }
+  
+  .event-details-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+  }
+  
+  .event-details-section p {
+    font-size: 0.9rem;
+    margin: 8px 0;
+  }
+  
+  .venue-card-container {
+    max-width: 100%;
+    margin: 10px 0;
+  }
+  
+  .amenities-container {
+    padding: 12px;
+    gap: 10px;
+  }
+  
+  .amenity-item {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+  
+  /* Accordion mobile styles */
+  .menu-accordion-header {
+    padding: 15px 20px;
+    font-size: 1rem;
+  }
+  
+  .menu-accordion-content {
+    padding: 12px 20px;
+  }
+  
+  .nested-accordion {
+    margin: 6px 0 6px 12px;
+    padding-left: 10px;
+  }
+  
+  .nested-accordion-header {
+    font-size: 0.9rem;
+    padding: 6px 0;
+  }
+  
+  .nested-accordion-list {
+    font-size: 0.85rem;
+    padding-left: 15px;
+  }
+  
+  /* Modal mobile styles */
+  .modal-content {
+    padding: 15px;
+    min-width: 280px;
+    margin: 20px;
+  }
+  
+  .login-form {
+    gap: 12px;
+  }
+  
+  .login-form input {
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  .login-form button {
+    padding: 10px 16px;
+    font-size: 14px;
+    width: 60%;
+  }
+  
+  .modal-close {
+    font-size: 1.2rem;
+    top: 8px;
+    right: 12px;
+  }
+}
+
+/* Small Phone Styles (320px - 480px) */
+@media screen and (max-width: 480px) {
+  .header-container {
+    padding: 8px 12px;
+  }
+  
+  .header-content {
+    font-size: 12px;
+    gap: 8px;
+  }
+  
+  .header-link {
+    font-size: 12px;
+  }
+  
+  .login-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+  
+  .venue-details-container {
+    padding: 15px;
+    margin: 10px auto;
+  }
+  
+  .venue-info h1 {
+    font-size: 1.5rem;
+  }
+  
+  .event-card-container {
+    padding: 15px;
+    margin: 10px auto;
+  }
+  
+  .carousel-img-container {
+    height: 180px;
+  }
+  
+  .carousel-btn {
+    font-size: 1rem;
+    padding: 4px 8px;
+  }
+  
+  .carousel-btn.left {
+    left: -8px;
+  }
+  
+  .carousel-btn.right {
+    right: -8px;
+  }
+  
+  .event-details-section {
+    padding: 12px;
+  }
+  
+  .event-details-section h3 {
+    font-size: 1rem;
+  }
+  
+  .event-details-section p {
+    font-size: 0.85rem;
+  }
+  
+  .modal-content {
+    padding: 12px;
+    min-width: 250px;
+  }
+  
+  .login-form button {
+    width: 70%;
+    font-size: 13px;
+  }
 }

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { BASE_URL } from "../components/constants";
-import EventCards from "../components/EventCards";
 import { useOutletContext } from "react-router-dom";
+import EventCardCarousel from "../components/EventCards";
 
 
 function Home() {
@@ -13,17 +13,17 @@ function Home() {
         fetchData();
     }, [])
 
-    useEffect(()=> {
+    useEffect(() => {
         onFilter(filterText)
-    },[filterText])
+    }, [filterText])
 
-   const onFilter = (searchText) => {
-        filteredData = data.filter((item => item.title.toLowerCase().includes(filterText.toLowerCase()))) 
+    const onFilter = (searchText) => {
+        filteredData = data.filter((item => item.title.toLowerCase().includes(filterText.toLowerCase())))
         setFilteredData(filteredData)
-        if(searchText === ""){
+        if (searchText === "") {
             fetchData()
         }
-   }
+    }
 
     const fetchData = async () => {
         const rawData = await fetch(`${BASE_URL}/get-feed`);
@@ -32,10 +32,11 @@ function Home() {
         setFilteredData(result.data.data);
     }
 
-   
+
     if (data.length === 0) {
         return <div style={{ textAlign: "center" }}><h1>Loading</h1></div>
     }
+
 
     return (
 
@@ -43,13 +44,14 @@ function Home() {
             <div className="main-layout">
                 {filteredData.map((item) => {
                     return (
-                        <EventCards
+                        <EventCardCarousel
                             key={item.name}
                             name={item.restaurantName}
                             title={item.title}
-                            image={item.profilePicture}
+                            images={item.media}
                             likes={item.likeCount}
                             comments={item.commentCount}
+                            desc = {item.description}
                         />
                     )
                 })}
